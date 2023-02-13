@@ -6,12 +6,18 @@ const options = {
         <section class="form-demo">
 
             <fieldset>
+                <legend>Text Input</legend>
+                <input v-model="txt" placeholder="Add some text.." />
+            </fieldset>
+            
+            <fieldset>
                 <legend>Text Area</legend>
-                <textarea v-model="message" placeholder="add multiple lines"></textarea>
+                <textarea v-model="message" placeholder="Add multiple lines"></textarea>
             </fieldset>
             
             <fieldset>
                 <legend>Check Boxes</legend>
+
                 <input type="checkbox" value="Jack" v-model="checkedNames" /> Jack
                 <input type="checkbox" value="John" v-model="checkedNames" /> John
                 <input type="checkbox" value="Joe" v-model="checkedNames" /> Joe
@@ -20,6 +26,7 @@ const options = {
             
             <fieldset>
                 <legend>Radio Buttons</legend>
+                
                 <input type="radio" value="Cat" v-model="picked"> Cat
                 <input type="radio" value="Dog" v-model="picked"> Dog
                 <input type="radio" value="Fish" v-model="picked"> Fish
@@ -51,6 +58,7 @@ const options = {
     `,
     data() {
         return {
+            txt: '',
             message: '',
             checkedNames: [],
             picked: '',
@@ -60,7 +68,7 @@ const options = {
     },
     computed: {
         isValid() {
-            return !!this.message.length
+            return !!this.txt.length
         }
     }
 }
